@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Data Science - GM University</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> 18001237099</span>
+                <span><i class="fas fa-envelope"></i> info@gmu.ac.in</span>
+            </div>
+            
+            <div class="university-brand">
+                <img src="static/images/college logo.jpg" alt="GM University Logo" class="logo">
+                <div class="brand-text">
+                    <h1>GM UNIVERSITY</h1>
+                    <p>Innovating Minds</p>
+                </div>
+            </div>
+
+            <div class="kcet-codes">
+                <span>KCET Codes: B.Tech - E303</span>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#gallery" class="nav-link active">Gallery</a></li>
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#faculty" class="nav-link active">Faculty</a></li>
+                <li><a href="#student-corner" class="nav-link active">Student Corner</a></li>
+                <li><a href="#iqac" class="nav-link active">IQAC</a></li>
+                <li><a href="#research" class="nav-link active">Research</a></li>
+                <li><a href="#admissions" class="nav-link active">Admissions</a></li>
+                <li><a href="#ucp" class="nav-link active">UCP Program</a></li>
+                <li><a href="#placements" class="nav-link active">Placements</a></li>
+                <li><a href="#contact" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero-section slider-section">
+  <div class="slider" aria-label="Hero slider">
+    <div class="slides" id="slides">
+
+      <div class="slide active" style="background-image: url('static/images/hero1.jpg');">
+        <div class="slide-overlay">
+          <h1>Department of</h1><h2>Data Science</h2>
+          <p>Transforming data into insights, insights into innovation.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('static/images/hero2.JPG');">
+        <div class="slide-overlay">
+          <h1>Industry Ready</h1><h2>Hands-on Learning</h2>
+          <p>Bridge between academia and industry with practical projects.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('static/images/hero3.jpg');">
+        <div class="slide-overlay">
+          <h1>Research & Innovation</h1><h2>AI • ML • Analytics</h2>
+          <p>Cutting-edge research driving real-world solutions.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('static/images/hero4.jpg');">
+        <div class="slide-overlay">
+          <h1>Student Success</h1><h2>Placements & Projects</h2>
+          <p>Preparing leaders for the data-driven world.</p>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+</section>
+
+<style>
+/* -------------------- CORE SLIDER STYLES -------------------- */
+.slider { 
+  position: relative; 
+  overflow: hidden; 
+  width: 100%;
+  height: 50vh; /* Set height on parent for stacked slides */
+}
+.slides { 
+  position: relative; 
+  width: 100%; 
+  height: 100%;
+}
+
+.slide { 
+  position: absolute; /* Stack slides on top of each other */
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%; /* Inherit height from .slider (50vh) */
+  background-color: #333;
+  opacity: 0; /* All slides initially hidden */
+  transition: opacity 1.5s ease-in-out; /* Fade duration */
+  z-index: 1;
+  
+  /* Background Image & Ken Burns Setup */
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center 40%; 
+  transform: scale(1.05); /* Initial scale for the zoom effect */
+}
+
+/* Make the active slide visible and start the gentle zoom */
+.slide.active {
+    opacity: 1; /* Fade in */
+    z-index: 2; /* Bring to front */
+    animation: kenburns-zoom 20s linear forwards; /* Start the slow zoom */
+}
+
+/* -------------------- KEN BURNS ANIMATION -------------------- */
+@keyframes kenburns-zoom {
+    from {
+        /* Start slightly zoomed in */
+        transform: scale(1.05);
+    }
+    to {
+        /* End slightly more zoomed in for continuous motion */
+        transform: scale(1.15);
+    }
+}
+
+/* -------------------- OVERLAY STYLES (Keep the same) -------------------- */
+.slide-overlay {
+  position: absolute; left: 0; right: 0; bottom: 12%; text-align: left;
+  padding: 24px 40px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  max-width: 900px;
+  z-index: 5;
+}
+.slide-overlay h1 { margin: 0; font-size: 1.2rem; font-weight: 600; opacity: .95; }
+.slide-overlay h2 { margin: 6px 0 10px; font-size: 2.6rem; line-height: 1; font-weight: 700; }
+.slide-overlay p { margin: 0; font-size: 1rem; opacity: .95; }
+/* Hide interactive elements */
+.slider-btn, .slider-dots { display: none; }
+
+/* -------------------- RESPONSIVE TWEAKS -------------------- */
+@media (max-width: 768px) {
+  .slider { 
+    height: 35vh; 
+  }
+}
+</style>
+
+
+<script>
+  (function() {
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+    const intervalTime = 5000;
+    const fadeDuration = 1500; 
+
+    function showNextSlide() {
+      
+      slides[index].classList.remove('active');
+      
+     
+      slides[index].style.animation = 'none';
+      void slides[index].offsetWidth; 
+      slides[index].style.animation = '';
+      
+      
+      index = (index + 1) % slides.length;
+      
+      
+      slides[index].classList.add('active');
+    }
+
+    slides[0].classList.add('active');
+    setInterval(showNextSlide, intervalTime);
+  })();
+</script>
+
+    <!-- Walkthrough Video Section -->
+
+<section id="walkthrough-video" class="section video-section">
+
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="static/videos/departement-walkthrough.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-content container-fluid">
+        <h2 class="section-title text-center">Take a Virtual Walkthrough!</h2>
+        <p class="text-center">Experience our state-of-the-art facilities firsthand.</p>
+        <a href="#about" class="btn btn-primary mt-3">Explore More</a>
+    </div>
+</section>
+
+    <!-- Achievements Section -->
+
+</section>
+<section id="achievements" class="section achievements-section">
+  <div class="section-header">
+    <h2 class="section-achievements">Latest Achievements</h2>
+    <p class="section-subtitle">Celebrating milestones of excellence</p>
+  </div>
+
+  <div class="achievements-slider">
+    <div class="slider-track">
+      
+      <!-- Item 1 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement1.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 Secured 2nd Place at Vyoma Hackathon – TechSurge 2K25
+            we developed a Generative AI-powered solution aimed at enhancing health and well-being — all within an intense 24-hour challenge. 💡⚡</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement2.jpg" alt="Achievement 2">
+        <h3>🏆 SIH grand finale 2k24 winners</h3>
+        <p>SIH grand finale 2k24 winners - with ministry of Education and AICTE Delegates</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement3.jpg" alt="Achievement 3">
+        <h3>lUXOFT Company Placement</h3>
+        <p>Pavan varahad ,suhail khan and rishi G - placed at LUXOFT DFC TECHNOLOGIES ,BENGLURU </p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement4.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 1st Place | State-Level Hackathon – Emerge 2025
+            📍 Jain Institute of Technology, Davangere.</p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement5.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Proud to share that our team secured 2nd place out of 105 teams at the Srishti 36-Hour Hackathon hosted by Acharya Institute of Technology, Bangalore🏆.</p>
+      </div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="achievement-card">
+        <img src="static/images/achievement1.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Students secured 1st place at National Data Hack 2025.</p>
+      </div>
+      <div class="achievement-card">
+        <img src="static/images/achievement2.jpg" alt="Achievement 2">
+        <h3>🏆 SIH grand finale 2k24 winners</h3>
+        <p>SIH grand finale 2k24 winners - with ministry of Education and AICTE Delegates</p>
+      </div>
+      <div class="achievement-card">
+        <img src="static/images/achievement3.jpg" alt="Achievement 3">
+        <h3> lUXOFT Company Placement</h3>
+        <p>Pavan varahad ,suhail khan and rishi G - placed at LUXOFT DFC TECHNOLOGIES ,BENGLURU </p>
+      </div>
+
+       <div class="achievement-card">
+        <img src="static/images/achievement4.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 1st Place | State-Level Hackathon – Emerge 2025
+            📍 Jain Institute of Technology, Davangere.</p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement5.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Proud to share that our team secured 2nd place out of 105 teams at the Srishti 36-Hour Hackathon hosted by Acharya Institute of Technology, Bangalore🏆.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Vision Mission -->
+    <section class="vision-mission section">
+        <div class="container">
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Vision</h3>
+                    <p>To emerge as a global center of excellence in Data Science, inspiring innovation, research, and ethical practices that transform raw data into intelligence for societal growth and sustainable development.</p>
+                </div>
+                <div class="mission-card" style="display: flex; flex-direction: column; align-items: flex-start; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.07);">
+                    <div class="card-icon" style="align-self: center; margin-bottom: 16px;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 style="align-self: center; margin-bottom: 12px;">Missions</h3>
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li style="margin-bottom: 10px;">To deliver cutting-edge education in Artificial Intelligence, Machine Learning, and Data Analytics with a balance of theory and real-world applications.</li>
+                        <li style="margin-bottom: 10px;">To cultivate analytical thinkers and innovators capable of solving complex problems using data-driven approaches.</li>
+                        <li style="margin-bottom: 10px;">To foster research, entrepreneurship, and industry partnerships that accelerate technological advancements.</li>
+                        <li style="margin-bottom: 10px;">To empower students with digital leadership skills, creativity, and global perspectives in data science.</li>
+                        <li style="margin-bottom: 10px;">To nurture responsible professionals who apply data insights ethically for societal well-being and national development.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ================= GALLERY SECTION ================= -->
+
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <h2 class="section-title">Gallery</h2>
+    <p class="section-subtitle">Explore our events, achievements, and campus life</p>
+
+    <!-- Featured Video -->
+    <div class="featured-video">
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/HPiSuT-ubLI" title="GM University Davanagere, Vice-Chancellor - Dr SR Shankapal Sir Interview about GM UNIVERSITY." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Video Grid -->
+    <h3 class="sub-heading">Our Videos</h3>
+    <div class="video-grid">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/ybTbIlKgWlY" title="Join GM University – Admissions 2025 Now Open!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="852" height="480" src="https://www.youtube.com/embed/YBfnPDVI5Z4" title="Rahul Dit-O Live at Davanagere | GM University | 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/kwIRPM-UlQQ" title="GM University : ಮಧ್ಯ ಕರ್ನಾಟಕದಲ್ಲಿ ಶೈಕ್ಷಣಿಕ ಮುಕುಟ ಈ GMU | Golden Life | @newsfirstkannada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/leiMlvSX1V8" title="GM Institute of Technology, Davangere" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+    <!-- Photo Grid -->
+    <h3 class="sub-heading">Our Photos</h3>
+    <div class="photo-grid">
+    <img src="static/events/event1.jpg" alt="Event 1" onclick="openLightbox(this)">
+    <img src="static/events/event.2.jpg" alt="Event 2" onclick="openLightbox(this)">
+    <img src="static/events/event.3.jpg" alt="Event 3" onclick="openLightbox(this)">
+    <img src="static/events/event.4.jpg" alt="Event 4" onclick="openLightbox(this)">
+    <img src="static/events/event.5.jpg" alt="Event 5" onclick="openLightbox(this)">
+    <img src="static/events/event.6.jpg" alt="Event 6" onclick="openLightbox(this)">
+    <img src="static/events/event.7.jpg" alt="Event 7" onclick="openLightbox(this)">
+    <img src="static/events/event.8.jpg" alt="Event 8" onclick="openLightbox(this)">
+    <img src="static/events/event.9.jpg" alt="Event 9" onclick="openLightbox(this)">
+    <img src="static/events/event.10.jpg" alt="Event 10" onclick="openLightbox(this)">
+    <img src="static/events/event.11.jpg" alt="Event 11" onclick="openLightbox(this)">
+    <img src="static/events/event.12.jpg" alt="Event 12" onclick="openLightbox(this)">
+    <img src="static/events/event.13.jpg" alt="Event 13" onclick="openLightbox(this)">
+    <img src="static/events/event.14.jpg" alt="Event 14" onclick="openLightbox(this)">
+    <img src="static/events/event.15.jpg" alt="Event 15" onclick="openLightbox(this)">
+    <img src="static/events/event.16.jpg" alt="Event 16" onclick="openLightbox(this)">
+    <img src="static/events/event.17.jpg" alt="Event 17" onclick="openLightbox(this)">
+    <img src="static/events/event.18.jpg" alt="Event 18" onclick="openLightbox(this)">
+    <img src="static/events/event.19.jpg" alt="Event 19" onclick="openLightbox(this)">
+    <img src="static/events/event.20.jpg" alt="Event 20" onclick="openLightbox(this)">
+    <img src="static/events/event.21.jpg" alt="Event 21" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+  <div class="container-fluid">
+    <div class="section-header">
+      <h2 class="section-title">About the Department</h2>
+      <p class="section-subtitle">Leading the future of data-driven innovation</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Left side: Text -->
+      <div class="about-content">
+        <p>
+          The Department of Data Science at GM University is at the forefront of
+          data analytics, machine learning, and artificial intelligence
+          education. Established in 2018, our department has quickly become a
+          center of excellence for data science education and research.
+        </p>
+
+        <p>
+          We offer comprehensive programs that blend theoretical foundations
+          with practical applications, preparing students for careers in the
+          rapidly evolving field of data science. Our curriculum is designed in
+          collaboration with industry experts to ensure relevance and
+          employability.
+        </p>
+      </div>
+
+      <!-- Right side: Image -->
+      <div class="about-image">
+        <img src="static/images/gmu.jpeg" alt="Campus">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- HoD Message -->
+    <section class="hod-message section">
+        <div class="container">
+            <div class="hod-content">
+                <div class="hod-image">
+                    <img src="static/images/faculty/f.jpg" alt="Head of Department">
+                </div>
+                <div class="hod-text">
+                    <h2>Message from Head of Department</h2>
+                    <blockquote>
+                        <p>
+                        Dear Students,
+                        Welcome to the Department of Data Science at GM University, Davangere — a hub where knowledge meets innovation and data transforms into decisions.
+                        In today’s digital world, data is often called the “new oil.” At our department, we go beyond this idea — we believe data is the new intelligence that fuels discovery, research, and progress. We prepare our students to become innovators, problem-solvers, and visionaries in fields such as Artificial Intelligence, Machine Learning, Big Data Analytics, and Cloud Computing.
+                        Our teaching philosophy is simple: Learn, Apply, and Innovate. We blend rigorous academics with real-world applications through state-of-the-art laboratories, industry collaborations, hackathons, and research projects. Every student is encouraged to explore, experiment, and engineer solutions that can impact healthcare, finance, agriculture, business, and society at large.
+                        We are not just building data professionals; we are nurturing data leaders who carry ethical values, creativity, and a spirit of lifelong learning.
+                        I invite you to join us on this exciting journey where curiosity meets creativity, and ideas evolve into innovations that can shape a smarter, more sustainable future.
+                    </blockquote>
+                    <div class="hod-info">
+                        <h4>Prof. Firoz Khan</h4>
+                        <p>Head of Department, Data Science<br>
+                        15+ years of experience in Data Science and Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="faculty section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Faculty Profile</h2>
+                <p class="section-subtitle">Meet our distinguished faculty members</p>
+            </div>
+            
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <img src="static/images/faculty/f.jpg" alt="Mr. Firoz Khan">
+                    <h3>Prof. Firoz Khan</h3>
+                    <p class="position">Head of the departement</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty1.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <img src="static/images/faculty/va.jpg" alt="Prof. Sreevani Maddukuri">
+                    <h3>Dr. Sreevani Maddukuri</h3>
+                    <p class="position">Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty2.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <img src="static/images/faculty/Im.jpg" alt="Mr. Imran Khan">
+                    <h3>Prof.Imran Khan</h3>
+                    <p class="position">Associate Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty3.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <img src="static/images/faculty/as.jpg" alt="Ms.Aswini G T">
+                    <h3>Prof.Aswini G T</h3>
+                    <p class="position">Assistant Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty4.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/ra.jpg" alt="Mrs. Ramya Annigere">
+                    <h3>Prof. Ramya Annigere</h3>
+                    <p class="position">Assistant Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty5.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/ya.jpg" alt="Ms. Yashodha M S">
+                    <h3>Prof. Yashodha M S</h3>
+                    <p class="position">Assistant Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty6.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/bh.jpg" alt="Ms.Bhumika A">
+                    <h3>Prof.Bhumika A</h3>
+                    <p class="position">Assistant Professor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty7pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/hi.jpg" alt="Mrs.Bhagyalaxmi">
+                    <h3>Prof.Bhagyalaxmi Hiremath</h3>
+                    <p class="position">Tutor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty8.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/jayalaxmi.jpg" alt="Ms.Jayalaxmi S">
+                    <h3>Prof.Jayalaxmi S</h3>
+                    <p class="position">Tutor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty9.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/ma.jpg" alt="Mr.Manoj P">
+                    <h3>Prof.Manoj P</h3>
+                    <p class="position">Tutor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty10.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="static/images/faculty/a.jpg" alt="Mrs.Ananya H Doddagoudar">
+                    <h3>Prof.Ananya H Doddagoudar</h3>
+                    <p class="position">Tutor</p>
+                    <div class="download-section">
+                        <a href="static/pdf/faculty11.pdf" download class="download-btn">
+                            📥 View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="student-corner" class="section student-corner">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2 class="section-title">Student Corner</h2>
+            <p class="section-subtitle">A hub for collaboration, resources, and innovation</p>
+        </div>
+
+        <div class="corner-grid">
+            <!-- Peer Learning -->
+            <div class="corner-card">
+                <img src="static/images/peer learning.jpeg" alt="Peer Learning">
+                <h3>Students research and 🤝 Peer Learning</h3>
+                <p>Join study groups, collaborate on projects, and share knowledge with fellow students. 
+                   Build stronger understanding through teamwork and discussions.</p>
+                <a href="#" class="corner-link">Explore Groups →</a>
+            </div>
+
+            <!-- Open Source Community -->
+            <div class="corner-card">
+                <img src="static/images/open source.jpeg" alt="open source">
+                <h3>🌐 Open Source Community</h3>
+                <p>Contribute to open-source projects, explore GitHub repositories, and become part of 
+                   the global data science developer network.</p>
+                <a href="https://leap.gmu.ac.in/leap/students/pbl.php" class="corner-link">View Projects →</a>
+            </div>
+
+            <!-- Program Study Material -->
+            <div class="corner-card">
+                <img src="static/images/students.jpeg" alt="Campus">
+                <h3>📚 Program Study Material</h3>
+                <p>Access curated notes, assignments, past exam papers, and additional learning 
+                   resources to support your academic journey.</p>
+                <a href="https://leap.gmu.ac.in/leap/students/program_study_material.php" class="corner-link">Get Resources →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Learning Resources -->
+    <section class="resources section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Learning Resources</h2>
+                <p class="section-subtitle">State-of-the-art facilities for comprehensive learning</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="static/images/lab.jpg" alt="Computer Lab">
+                    <h3>Advanced Computing Labs</h3>
+                    <p>High-performance computing systems with latest software tools for data analysis and machine learning.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <img src="static/images/library.jpg" alt="Library">
+                    <h3>Digital Library</h3>
+                    <p>Access to premium journals, e-books, and online resources from leading publishers and platforms.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <img src="static/images/research.png" alt="Research Center">
+                    <h3>Research Centers</h3>
+                    <p>Dedicated spaces for research projects and collaboration with industry partners.</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+        <!-- IQAC Section -->
+     <section id="iqac" class="section iqac-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">IQAC Documents</h2>
+                <p class="section-subtitle">Quality assurance and continuous improvement</p>
+            </div>
+            
+            <div class="iqac-coordinator">
+                <div class="coordinator-info">
+                    <img src="static/images/faculty/as.jpg" alt="IQAC Co-Coordinator">
+                    <div class="coordinator-details">
+                        <h3>Prof Ashwini G T</h3>
+                        <p>IQAC Coordinator</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="iqac-documents">
+                <div class="document-list">
+                    <div class="document-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <div class="document-info">
+                            <h4>Academic Quality Report 2023-24</h4>
+                            <p>Comprehensive quality assessment report</p>
+                            <a href="#" class="download-link">Download PDF</a>
+                        </div>
+                    </div>
+                    
+                    <div class="document-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <div class="document-info">
+                            <h4>Curriculum Assessment Document</h4>
+                            <p>Detailed curriculum evaluation and feedback</p>
+                            <a href="#" class="download-link">Download PDF</a>
+                        </div>
+                    </div>
+                    
+                    <div class="document-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <div class="document-info">
+                            <h4>Faculty Development Programs Report</h4>
+                            <p>Professional development initiatives summary</p>
+                            <a href="#" class="download-link">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research & Publications</h2>
+                <p class="section-subtitle">Leading research in data science and AI</p>
+            </div>
+            
+            <div class="research-coordinator">
+                <div class="coordinator-info">
+                    <img src="static/images/faculty/va.jpg" alt="Research Coordinator">
+                    <div class="coordinator-details">
+                        <h3>Dr. Shreevani Maddukuri</h3>
+                        <p>Research Coordinator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-areas">
+                <h3>Research Areas</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Artificial Intelligence</h4>
+                        <p>Advanced AI algorithms and applications</p>
+                    </div>
+                    <div class="research-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Predictive Analytics</h4>
+                        <p>Forecasting and trend analysis models</p>
+                    </div>
+                    <div class="research-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Machine Learning</h4>
+                        <p>Machine learning algorithms and their applications</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="publications">
+                <h3>Recent Publications</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <h4>"A feature-level ensemble machine learning approach for attack detection in IoT networks
+"</h4>
+                        <p>Journal Discover Internet of Things, 2024</p>
+                        <p>Authors:Prof. Firoz Khan </p>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>"IVFD: An Intelligent Video Forgery 
+Detection Framework Leveraging InceptionV3 and GRU for Enhanced Forensics. Indonesian Journal 
+of Electrical Engineering and Informatics (IJEEI), 13(1), 30-44.
+"</h4>
+                        <p>Indonesian Journal of Electrical Engineering and Informatics (IJEEI), Vol. 13, No. 2, June 2025, pp. 439-450, 2025</p>
+                        <p>Authors: 1. Bhargavi, K., Pasha, M. J., Kotoju, R., & Vani, M. S.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>"Artificial Intelligence Enabled Wireless Networking for Beyond 5G"</h4>
+                        <p>International Journal of Research Culture Society</p>
+                        <p>Authors: Prof. Ashwini G T</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Projects -->
+    <section class="projects section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Projects & Products</h2>
+                <p class="section-subtitle">Innovation through practical application</p>
+            </div>
+            
+            
+            <div class="projects-showcase">
+                <div class="project-item">
+                    <img src="static/images/achievement2.jpg" alt="pill bot">
+                    <h3>Pill Bot (Automated Pill Dispenser)</h3>
+                    <p>The Pill Bot is a smart, automated pill dispenser designed to help patients, caregivers, and healthcare providers manage medications efficiently. It ensures that medicines are taken at the right time, in the right dosage, reducing the chances of missed doses or overdosing.</p>
+                    <p><strong>Team:</strong>Pill-Bot Engineer</p>
+                </div>
+                
+                <div class="project-item">
+                    <img src="static/images/kiet.jpg" alt="Predictive Model">
+                    <h3>Clean & Green Technology</h3>
+                    <p>Built an industrial scale green hydrogen (> 50 TPD) production facility, with a levelized cost of hydrogen (LCOH) below $2. USD per kg</p>
+                    <p><strong>Team:</strong>Innovibe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Admissions Section -->
+    <section id="admissions" class="admissions section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admission Activities</h2>
+                <p class="section-subtitle">Join our data science community</p>
+            </div>
+            
+            <div class="admission-coordinator">
+                <div class="coordinator-info">
+                    <img src="static/images/faculty/Im.jpg" alt="Admission Coordinator">
+                    <div class="coordinator-details">
+                        <h3>Prof. Imran Khan</h3>
+                        <p>Admissions Coordinator</p>
+                        <p>Email: imran@gmu.ac.in</p>
+                        <p>Phone: +91-9876543212</p>
+                    </div>
+                
+
+            <div class="admission-coordinator">
+              <div class="coordinator-info">
+                  <img src="static/images/faculty/ya.jpg" alt="Admission Co-Coordinator">
+                  <div class="coordinator-details">
+                      <h3>Prof. Yashodha M S</h3>
+                      <p>Admissions Co-Coordinator</p>
+                      <p>Email: yashodha@gmu.ac.in</p>
+                      <p>Phone: +91-9876543213</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="admission-info">
+                <div class="admission-grid">
+                    <div class="admission-card">
+                        <h3>B.Tech Data Science</h3>
+                        <ul>
+                            <li>Eligibility: 12th PUC Science</li>
+                            <li>Entrance: KCET/Mgmt</li>
+                            <li>Seats: 120</li>
+                            <li>Fee: ₹2,25,000 per year</li>
+                        </ul>
+                        <button class="btn btn-primary">Apply Now</button>
+                    </div>
+                    
+                    <div class="admission-card">
+                        <h3>B.Tech CSE - IoT with AI</h3>
+                        <ul>
+                            <li>Eligibility: 12th PUC Science </li>
+                            <li>Entrance:  KCET/Mgmtt</li>
+                            <li>Seats: 120</li>
+                            <li>Fee: ₹2,25,000 per year</li>
+                        </ul>
+                        <button class="btn btn-primary">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ucp-section -->
+
+<section id="ucp" class="ucp-section">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">University Connect Program (UCP)</h2>
+      <p class="section-subtitle">Building strong bridges between academia and industry</p>
+    </div>
+
+    <!-- About UCP -->
+    <div class="ucp-about">
+      <p>
+        The <strong>University Connect Program (UCP)</strong> at GM University is designed to
+        foster meaningful partnerships with leading industries. Through this program,
+        students gain hands-on exposure, industry-driven learning, and opportunities
+        to engage with global technology leaders. UCP ensures our graduates are not just
+        academically strong but also career-ready professionals.
+      </p>
+    </div>
+
+    <!-- Coordinator -->
+    <div class="ucp-coordinator">
+      <div class="coordinator-info">
+        <img src="static/images/faculty/f.jpg" alt="UCP Coordinator">
+        <div class="coordinator-details">
+          <h3>Mr. Firoz Khan</h3>
+          <p>UCP Coordinator</p>
+          <p>Email: <a href="mailto:ucp.datascience@gmu.ac.in">ucp.datascience@gmu.ac.in</a></p>
+          <p>Phone: <a href="tel:+919876543215">+91-9876543215</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recently Visited Companies -->
+    <div class="recent-companies">
+      <h3>Recently Visited Companies</h3>
+      <div class="companies-grid">
+
+        <div class="company-card">
+          <img src="static/companies/tally.png" alt="Tally HQ">
+          <h4>Tally HQ, Bangalore</h4>
+          <p>
+            On 13th August 2025, a distinguished delegation from GM University comprising...
+          </p>
+        </div>
+
+        <div class="company-card">
+          <img src="static/companies/intel.png" alt="Intel">
+          <h4>Intel, Bangalore</h4>
+          <p>Collaboration on AI & VLSI PG Diploma programs for future-ready talent.</p>
+        </div>
+
+        <div class="company-card">
+          <img src="static/companies/ibm.png" alt="IBM">
+          <h4>IBM, Bangalore</h4>
+          <p>Designing PG Diploma programs in AI, Cloud, and Enterprise Solutions.</p>
+        </div>
+
+        <div class="company-card">
+          <img src="static/companies/ibm-gmu.png" alt="IBM GMU Visit">
+          <h4>IBM Leaders at GMU</h4>
+          <p>Skill-based collaborations and industry-driven PG Diploma courses.</p>
+        </div>
+
+        <div class="company-card">
+          <img src="static/companies/tally-gmu.png" alt="Tally GMU Visit">
+          <h4>Tally Education at GMU</h4>
+          <p>Strengthening skill-based learning with Tally’s domain expertise.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="achievements" class="section achievements-section">
+  <div class="section-header">
+    <h2 class="section-achievements">Latest Achievements</h2>
+    <p class="section-subtitle">Celebrating milestones of excellence</p>
+  </div>
+
+  <div class="achievements-slider">
+    <div class="slider-track">
+      
+      <!-- Item 1 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement1.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 Secured 2nd Place at Vyoma Hackathon – TechSurge 2K25
+            we developed a Generative AI-powered solution aimed at enhancing health and well-being — all within an intense 24-hour challenge. 💡⚡</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement2.jpg" alt="Achievement 2">
+        <h3>🏆 SIH grand finale 2k24 winners</h3>
+        <p>SIH grand finale 2k24 winners - with ministry of Education and AICTE Delegates</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="achievement-card">
+        <img src="static/images/achievement3.jpg" alt="Achievement 3">
+        <h3>lUXOFT Company Placement</h3>
+        <p>Pavan varahad ,suhail khan and rishi G - placed at LUXOFT DFC TECHNOLOGIES ,BENGLURU </p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement4.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 1st Place | State-Level Hackathon – Emerge 2025
+            📍 Jain Institute of Technology, Davangere.</p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement5.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Proud to share that our team secured 2nd place out of 105 teams at the Srishti 36-Hour Hackathon hosted by Acharya Institute of Technology, Bangalore🏆.</p>
+      </div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="achievement-card">
+        <img src="static/images/achievement1.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Students secured 1st place at National Data Hack 2025.</p>
+      </div>
+      <div class="achievement-card">
+        <img src="static/images/achievement2.jpg" alt="Achievement 2">
+        <h3>🏆 SIH grand finale 2k24 winners</h3>
+        <p>SIH grand finale 2k24 winners - with ministry of Education and AICTE Delegates</p>
+      </div>
+      <div class="achievement-card">
+        <img src="static/images/achievement3.jpg" alt="Achievement 3">
+        <h3> lUXOFT Company Placement</h3>
+        <p>Pavan varahad ,suhail khan and rishi G - placed at LUXOFT DFC TECHNOLOGIES ,BENGLURU </p>
+      </div>
+
+       <div class="achievement-card">
+        <img src="static/images/achievement4.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>🏆 1st Place | State-Level Hackathon – Emerge 2025
+            📍 Jain Institute of Technology, Davangere.</p>
+      </div>
+
+      <div class="achievement-card">
+        <img src="static/images/achievement5.jpg" alt="Achievement 1">
+        <h3>🏆 Hackathon Winner</h3>
+        <p>Proud to share that our team secured 2nd place out of 105 teams at the Srishti 36-Hour Hackathon hosted by Acharya Institute of Technology, Bangalore🏆.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- placements Section -->
+    <section id="placements" class="placements section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Placement Activities</h2>
+                <p class="section-subtitle">Excellent career opportunities for our graduates</p>
+            </div>
+            
+            <div class="iqac-coordinator">
+                <div class="coordinator-info">
+                    <img src="static/images/faculty/va.jpg" alt="IQAC Coordinator">
+                    <div class="coordinator-details">
+                        <h3>Dr. Shreevani Maddukuri</h3>
+                        <p>IQAC Coordinator</p>
+                    </div>
+            <div class="placement-coordinator">
+                <div class="coordinator-info">
+                    <img src="static/images/faculty/bh.jpg" alt="Placement Co-Coordinator">
+                    <div class="coordinator-details">
+                        <h3>Ms. Bhumika A</h3>
+                        <p>Placement Co-Coordinator</p>
+                    </div>
+              </div>
+            </div>
+            </div>
+            <div><a href="https://leap.gmu.ac.in/leap/students/aptitude_development.php" class="btn btn-primary" target="_blank" style="display: block; margin: 0 auto;">Get Yourself ready for placements</a></div>
+            
+            <div class="placement-stats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Placement Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>₹34LPA</h3>
+                        <p>Highest Package</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>₹4LPA</h3>
+                        <p>Average Package</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Recruiting Companies</p>
+                    </div>
+                </div>
+            </div>
+            
+<div class="recruiters-slider">
+  <div class="slider-track">
+    <div class="recruiter-slide">
+      <img src="static/recruiters/microsoft.png" alt="Microsoft">
+      <span>Microsoft</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/google.png" alt="Google">
+      <span>Google</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/luxoft.png" alt="Luxoft">
+      <span>Luxoft</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/ibm.png" alt="IBM">
+      <span>IBM</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/tcs.png" alt="TCS">
+      <span>TCS</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/infosys.jpg" alt="Infosys">
+      <span>Infosys</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/wipro.jpg" alt="Wipro">
+      <span>Wipro</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/accenture.png" alt="Accenture">
+      <span>Accenture</span>
+    </div>
+    <div class="recruiter-slide">
+        <img src="static/recruiters/amazon.png" alt="Amazon">
+        <span>Amazon</span>
+    </div>
+
+    <!-- duplicate for infinite loop -->
+    <div class="recruiter-slide">
+      <img src="static/recruiters/microsoft.png" alt="Microsoft">
+      <span>Microsoft</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/google.png" alt="Google">
+      <span>Google</span>
+    </div>
+
+    <div class="recruiter-slide">
+      <img src="static/recruiters/luxoft.png" alt="Luxoft">
+      <span>Luxoft</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/ibm.png" alt="IBM">
+      <span>IBM</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/tcs.png" alt="TCS">
+      <span>TCS</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/infosys.jpg" alt="Infosys">
+      <span>Infosys</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/wipro.jpg" alt="Wipro">
+      <span>Wipro</span>
+    </div>
+    <div class="recruiter-slide">
+      <img src="static/recruiters/accenture.png" alt="Accenture">
+      <span>Accenture</span>
+    </div>
+    <div class="recruiter-slide">
+        <img src="static/recruiters/amazon.png" alt="Amazon">
+        <span>Amazon</span>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========= CSS ========= -->
+<style>
+/* General Section Styling */
+.ucp-section {
+  padding: 60px 20px;
+  background: linear-gradient(rgba(74, 222, 252, 0.6), rgba(249, 55, 55, 0.6));
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.container {
+  max-width: 2700px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1d1e1e;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #ae8989;
+  margin-top: 8px;
+}
+
+/* About UCP */
+.ucp-about {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #f7f7f7;
+}
+
+/* Coordinator */
+.ucp-coordinator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.coordinator-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+.coordinator-info:hover {
+  transform: translateY(-5px);
+}
+.coordinator-info img {
+  width: 180px;   /* bigger */
+  height: 180px;  /* bigger */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #3498db;
+}
+.coordinator-details h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+.coordinator-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+.coordinator-details a {
+  color: #3498db;
+  text-decoration: none;
+}
+.coordinator-details a:hover {
+  text-decoration: underline;
+}
+
+/* Recently Visited Companies */
+.recent-companies h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.company-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.company-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+.company-card img {
+  max-width: 100%;
+  height: 120px;      /* bigger logo */
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.company-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+.company-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+</style>
+
+    <!-- Faculty Achievements -->
+    <section class="achievements section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Faculty Achievements</h2>
+                <p class="section-subtitle">Recognition and excellence in academia</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <h3>Best Research Paper </h3>
+                    <p> 1. Firoz Khan 2024 - 2025 papers in Scopus indexed journals and IEEE conference</p>
+Details of Publications:
+
+Journal Paper
+Title: A feature-level ensemble machine learning approach for attack detection in IoT networks
+Journal: Discover Internet of Things
+DOI: 10.1007/s43926-025-00185-7
+Scopus Metrics: CiteScore 8.4, Quartile Q1 (Engineering/Computer Science)
+
+Journal Paper
+Title: Detecting Evolving Cyber Threats in IoT Environments Using Machine Learning
+Journal: International Journal of Intelligent Engineering and Systems, Vol. 17, No. 6, 2024
+DOI: 10.22266/ijies2024.1231.02
+Scopus Metrics: CiteScore 3.2, Quartile Q2 (Engineering/Computer Science)
+
+IEEE Conference Paper
+Title: An Ensemble Model for Attack Detection in Internet of Things Edge Cloud Environment
+Conference: IEEE 2025 Global Conference on Information Technology and Communication Networks (GITCON), Belagavi</p>
+                    <span class="achievement-date">2024-25</span>
+                </div>
+                
+                <div class="achievement-item">
+                    <h3>National Science Foundation Grant</h3>
+                    <p>Dr.Sreevani Maddukuri
+Journals :
+1. Bhargavi, K., Pasha, M. J., Kotoju, R., & Vani, M. S. (2025). IVFD: An Intelligent Video Forgery 
+Detection Framework Leveraging InceptionV3 and GRU for Enhanced Forensics. Indonesian Journal 
+of Electrical Engineering and Informatics (IJEEI), 13(1), 30-44.
+2. Desidi Narsimha Reddy,Dr Pinagadi Venkateswararao,Dr M. Sree Vani,Vodapelli Pranathi, Dr Anitha 
+Patil HybridPPI: A Hybrid Machine Learning Framework for Protein-Protein Interaction Prediction, 
+Indonesian Journal of Electrical Engineering and Informatics (IJEEI), Vol. 13, No. 2, June 2025, pp. 
+439-450
+3. Rajarajeswari, P., Saraswathi, R. V., Jahnavi, Y., Ravuri, V., Alankritha, S., Vani, M. S., ... 
+&Gaftandzhieva, S. (2025). Performance evaluation of generative adversarial networks for anime face 
+synthesis using deep learning approaches. Multidisciplinary Science Journal, 7(3), 2025093-2025093.
+4. A. Harshavardhan., M. Sree Vani., Dr Anitha Patil., NagendarYamsani., & Kande Archana (2025) 
+Hybrid Deep Learning Framework For Intrusion Detection: Integrating Cnn, Lstm, And Attention 
+Mechanisms To Enhance Cybersecurity. Journal of Theoretical and Applied Information Technology, 
+103(1), 63-78.
+5. Koushik Anumal, G. Sunil Kumar, M. Sree Vani, Kuncham Sreenivasa Rao. BCDNN: Enhancing 
+CNN Model for Automatic Detection of Breast Cancer Using Histopathology Images, Indonesian 
+Journal of Electrical Engineering and Informatics (IJEEI), Vol. 13, No. 2, June 2025, pp. 424-438
+6. Moeed, S. A., Babu, B. S., Sreevani, M., Rao, B. V., Kumar, R. R., & Mohammed, G. B. (2024). An 
+Intelligent Crow Search Optimization and Bi-GRU for Forest Fire Detection System Using Internet of 
+Things. Nature Environment & Pollution Technology, 23(4).
+7. Vemula, S. T., Sreevani, M., Rajarajeswari, P., Bhargavi, K., Tavares, J. M. R., & Alankritha, S. 
+(2024). Deep Learning Techniques for Lung Cancer Recognition. Engineering, Technology & Applied 
+Science Research, 14(4), 14916-14922.
+8. M. Sree Vani (2019), Opinion analysis of digital India mission, International Journal of Recent 
+Technology and Engineering (IJRTE), 8(1c2) 1240-1242.
+9. Rajarajeswari, P., Sreevani, M., &Suryakumari, P. L. (2021, November). Secure Cloud Risk 
+Architecture analysis for Mobile Banking system and its performance analysis based on Machine 
+learning approaches. In Journal of Physics: Conference Series (Vol. 2089, No. 1, p. 012007). IOP 
+Publishing.
+10. Vani, M. S., Bhramaramba, R., Vasumati, D., & Babu, O. Y. (2014). Tui based touch-spam detection
+in mobile applications to increase the security from advertisement networks. IJACCC: International 
+Journal of Advanced Computer Communications and Control, 2(01), 17-22.</p>
+                    <span class="achievement-date">2017-2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Achievements -->
+    <section class="student-achievements section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Achievements</h2>
+                <p class="section-subtitle">Excellence in academics and beyond</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <h3>International Hackathon Winner</h3>
+                    <p>Team DataMinds won first prize in Global AI Hackathon 2024 with their healthcare solution</p>
+                    <span class="achievement-date">February 2024</span>
+                </div>
+                
+                <div class="achievement-item">
+                    <h3>Research Paper Publication</h3>
+                    <p>M.Tech student Priya Patel published paper in top-tier AI conference</p>
+                    <span class="achievement-date">March 2024</span>
+                </div>
+                
+                <div class="achievement-item">
+                    <h3>Google Summer of Code</h3>
+                    <p>5 students selected for Google Summer of Code 2024 program</p>
+                    <span class="achievement-date">April 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section class="alumni section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Department Alumni</h2>
+                <p class="section-subtitle">Our graduates making impact worldwide</p>
+            </div>
+            
+            <div class="alumni-grid">
+                <div class="alumni-card">
+                    <img src="static/images/gmu.jpeg" alt="Alumni">
+                    <h3></h3>
+                    <p class="position"></p>
+                    <p class="batch"></p>
+                    <p class="testimonial">  </p>
+                </div>
+                
+                <div class="alumni-card">
+                    <img src="static/images/gmu.jpeg" alt="Alumni">
+                    <h3></h3>
+                    <p class="position"></p>
+                    <p class="batch"></p>
+                    <p class="testimonial">  </p>
+                </div>
+                
+               <div class="alumni-card">
+                    <img src="static/images/gmu.jpeg" alt="Alumni">
+                    <h3></h3>
+                    <p class="position"></p>
+                    <p class="batch"></p>
+                    <p class="testimonial">  </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-achievements">Contact Us</h2>
+      <p class="section-subtitle">Get in touch with our department</p>
+    </div>
+
+    <div class="contact-container">
+
+      <!-- Contact Info -->
+      <div class="contact-grid">
+
+        <!-- Address -->
+        <div class="contact-item">
+          <i class="fas fa-map-marker"></i>
+          <div>
+            <h3>Location</h3>
+            <p>
+              Department of Data Science<br>
+              GM University<br>
+              Davangere, Karnataka - 577006
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>
+              +91-8192-123456<br>
+              +91-8192-123457
+            </p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>
+              datascience@gmu.ac.in<br>
+              info@gmu.ac.in
+            </p>
+          </div>
+        </div>
+      </div>
+     
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+    </div> 
+  </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GM University</h3>
+                    <p>Department of Data Science</p>
+                    <p>Innovating minds, transforming futures through data science education and research.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#research">Research</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> 18001237099</p>
+                    <p><i class="fas fa-envelope"></i> datascience@gmu.ac.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Davangere, Karnataka</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/GM-University-61554085324048/?locale=nl_BE"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/gmunivsbp/status/1080668858564849664"><i class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/company/gmu.ac.in"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/gmuniversity_official_set_dvg/#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GM University - Department of Data Science. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header" id="chatbot-header">
+            <div class="chatbot-avatar">
+                <img src="https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Mallika">
+            </div>
+            <div class="chatbot-info">
+                <span class="chatbot-name">Mallika</span>
+                <span class="chatbot-status">AI Assistant</span>
+            </div>
+            <button class="chatbot-toggle" id="chatbot-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <img src="https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Mallika">
+                </div>
+                <div class="message-content">
+                    <p>Hello! I'm Mallika, your AI assistant for the Data Science Department. How can I help you today?</p>
+                    <div class="quick-replies">
+                        <button class="quick-reply">Programs</button>
+                        <button class="quick-reply">Admissions</button>
+                        <button class="quick-reply">Faculty</button>
+                        <button class="quick-reply">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button id="chatbot-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="chatbot-float" id="chatbot-float">
+        <div class="chatbot-icon">
+            <img src="https://i.pinimg.com/originals/0c/67/5a/0c675a8e1061478d2b7b21b330093444.gif" alt="Mallika">
+        </div>
+        <div class="chat-bubble">
+            <span>Have a question?</span>
+            <span>Talk with our AI assistant Mallika</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+function openLightbox(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
