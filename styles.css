@@ -631,12 +631,16 @@ body {
     background-size: cover;
     background-position: center;
     color: #fff;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .resource-card {
@@ -655,6 +659,8 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .resource-card h3 {
@@ -666,6 +672,8 @@ body {
 .resource-card p {
     color: #2c2c2c;
     padding: 0 20px 20px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Faculty Section */
@@ -1681,6 +1689,7 @@ body {
   display: flex;
   width: calc(300px * 6); /* card width × number of cards */
   animation: scroll 40s linear infinite;
+  overflow-x: var(--link-hover-color);
 }
 
 .achievement-card {
