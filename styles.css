@@ -13,6 +13,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: justify;
+font-size: 18px;
+  line-height: 1.6;
 }
 
 /* --- Header Styling with Gradient --- */
@@ -21,6 +24,17 @@ body {
   background-image: linear-gradient(to right, #5ccff6, #f68598);
 }
 
+
+.news-line {
+  background: color #fcfafa;
+  color: #fc0808;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 2px solid #333;
+}
+.news-line marquee {
+  font-size: 24px;
+}
 /* --- Top Bar Styling (without background-color) --- */
 .top-bar {
   /* No background-color here */
@@ -31,8 +45,9 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px 0;
   padding: 0 20px;
+  justify-content: center;
 }
 
 
@@ -72,13 +87,13 @@ body {
 .brand-text p {
   font-size: 14px;
   margin: 0;
-  color: #ccc;
+  color: #fefdfd;
+  text-align: center !important;
 }
 
 .kcet-codes {
   font-weight: bold;
 }
-
 /* ---------------------------------- */
 
 
@@ -94,7 +109,7 @@ body {
 .navbar .container {
   display: flex;
   align-items: center;
-  justify-content: flex-left; /* Align to the right for consistent placement */
+  justify-content: left !important; /* Align to the right for consistent placement */
   min-height: 70px;
   background-image: linear-gradient(to right, #5ccff6, #f68598);
 }
@@ -272,6 +287,11 @@ body {
     color: #fff;
 }
 
+
+p {
+  text-align: justify !important;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -298,8 +318,8 @@ body {
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
-    color:  #555;
+    font-size: 22px;
+    color:  #131212;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -316,7 +336,7 @@ body {
 
 /* Slightly larger, high-contrast variants for hero and important sections */
 .section-title.section-heading {
-    font-size: 2.2rem;
+    font-size: 24px;
     color: #fff;
     background: rgba(0,0,0,0.5);
 }
@@ -366,7 +386,7 @@ body {
 }
 
 .about-content p {
-    font-size: 1.1rem;
+    font-size: 24px;
     margin-bottom: 20px;
     text-align: justify;
     line-height: 1.6;
@@ -442,7 +462,7 @@ body {
 }
 
 .hod-text blockquote {
-    font-size: 1.1rem;
+    font-size: 24px;
     line-height: 1.8;
     color: #151414;
     font-style: italic;
@@ -464,13 +484,12 @@ body {
 
 /* Vision Mission */
 .vision-mission {
-    background: #f8f9fa;
     background: linear-gradient(rgba(248, 246, 246, 0.6), rgba(240, 10, 10, 0.6));
     background-size: cover;
     background-position: center;
     color: #141313;
     padding: 80px 20px;
-    text-align: center;
+    text-align: justify;
 }
 
 .vision-mission-grid {
@@ -486,7 +505,7 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: justify;
     transition: transform 0.3s ease;
 }
 
@@ -518,6 +537,7 @@ body {
     font-size: 1.5rem;
     color: #8B4513;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .objectives-card ul {
@@ -723,6 +743,7 @@ body {
     color: #D4AF37;
     font-weight: 600;
     margin-bottom: 5px;
+    text-align: center !important;
 }
 
 /* Research Section */
@@ -1261,7 +1282,7 @@ body {
 /* Footer */
 .footer {
     background: linear-gradient(rgba(24, 25, 25, 0.6), rgba(248, 247, 247, 0.6)), url('static/background/footer.jpg');
-    color: white;
+    color: rgb(12, 12, 12);
     padding: 60px 0 20px;
 }
 
@@ -1286,7 +1307,7 @@ body {
 }
 
 .footer-section ul li a {
-    color: white;
+    color: rgb(12, 12, 12);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1328,7 +1349,7 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(11, 11, 11, 0.616);
     padding-top: 20px;
     text-align: center;
 }
@@ -1597,7 +1618,7 @@ body {
 
 /* Student Corner Section */
 .student-corner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(244, 190, 190, 0.6)), url('static/background/students.jpg');
+    background: linear-gradient(rgba(237, 160, 160, 0.6), rgba(244, 190, 190, 0.6)), url('static/background/students.jpg');
     background-size: contain;
     background-position: center;
     color: #181717;
